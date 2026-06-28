@@ -114,7 +114,7 @@ form.addEventListener("submit", function(e){
         localStorage.setItem("loggedIn", "true");
         localStorage.setItem("username", user.username);
 
-        alert("Login Successful!");
+       
        sessionStorage.setItem("loggedIn", "true");
 window.location.href = "https://sadmansakif21-jpg.github.io/UIU/";
         // এখানে পরে তোমার Blogspot URL বসাবে
