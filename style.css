@@ -1,0 +1,634 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:linear-gradient(135deg,#1d0c04,#5d2400,#8a4300);
+    overflow:hidden;
+    transition:.5s;
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+    position:relative;
+    width:400px;
+    padding:35px;
+    border-radius:25px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:0 0 40px rgba(255,145,0,.35);
+}
+
+/* ===========================
+   TOGGLE
+=========================== */
+
+.theme-switch{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.mode-text{
+    color:#ffd36d;
+    letter-spacing:2px;
+    font-size:13px;
+    font-weight:700;
+}
+
+.toggle{
+    width:60px;
+    height:30px;
+    border-radius:30px;
+    background:#6f3200;
+    position:relative;
+    cursor:pointer;
+    transition:.4s;
+}
+
+.ball{
+    position:absolute;
+    width:24px;
+    height:24px;
+    top:3px;
+    left:3px;
+    border-radius:50%;
+    background:#ffb100;
+    box-shadow:0 0 20px orange;
+    transition:.4s;
+}
+
+/* ===========================
+   SUN
+=========================== */
+
+.sun{
+    width:120px;
+    height:120px;
+    margin:20px auto;
+    position:relative;
+}
+
+.sun-core{
+    position:absolute;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    top:30px;
+    left:30px;
+    background:radial-gradient(circle,#fff9c8,#ffc400,#ff6400);
+    box-shadow:
+    0 0 20px orange,
+    0 0 40px orange,
+    0 0 70px #ff8c00;
+}
+
+/* ===========================
+   ORBIT
+=========================== */
+
+.orbit{
+    position:absolute;
+    border:1px solid rgba(255,180,0,.35);
+    border-radius:50%;
+    animation:rotate linear infinite;
+}
+
+.orbit1{
+    width:90px;
+    height:90px;
+    top:15px;
+    left:15px;
+    animation-duration:8s;
+}
+
+.orbit2{
+    width:120px;
+    height:120px;
+    top:0;
+    left:0;
+    animation-duration:12s;
+}
+
+.planet{
+    position:absolute;
+    width:10px;
+    height:10px;
+    background:white;
+    border-radius:50%;
+    box-shadow:0 0 12px orange;
+}
+
+.p1{
+    top:-5px;
+    left:40px;
+}
+
+.p2{
+    bottom:-5px;
+    right:45px;
+}
+
+/* ===========================
+   TITLE
+=========================== */
+
+h1{
+    text-align:center;
+    color:#fff;
+    margin:20px 0;
+    letter-spacing:4px;
+}
+
+/* ===========================
+   INPUT
+=========================== */
+
+.input-box{
+    margin-bottom:18px;
+}
+
+.input-box label{
+    display:block;
+    color:#ffd27d;
+    margin-bottom:8px;
+    font-size:14px;
+}
+
+.input-box input{
+    width:100%;
+    padding:14px;
+    border-radius:12px;
+    outline:none;
+    border:1px solid rgba(255,255,255,.15);
+    background:rgba(255,255,255,.08);
+    color:#fff;
+    transition:.3s;
+}
+
+.input-box input::placeholder{
+    color:#ddd;
+}
+
+.input-box input:focus{
+    border-color:#ff9800;
+    box-shadow:0 0 18px rgba(255,165,0,.45);
+}
+/* ===========================
+   BUTTON
+=========================== */
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    outline:none;
+    border-radius:14px;
+    background:linear-gradient(90deg,#ffbf00,#ff6a00);
+    color:#fff;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.35s;
+    margin-top:10px;
+}
+
+button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 20px rgba(255,150,0,.7);
+}
+
+/* ===========================
+   EXTRA
+=========================== */
+
+.extra{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:15px 0;
+    color:#fff;
+    font-size:14px;
+}
+
+.extra a{
+    color:#ffcc66;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.extra a:hover{
+    color:#fff;
+}
+
+.signup{
+    margin-top:20px;
+    text-align:center;
+    color:#fff;
+}
+
+.signup a{
+    color:#ffb300;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.signup a:hover{
+    color:#fff;
+}
+
+/* ===========================
+   SUN GLOW
+=========================== */
+
+.sun::before{
+    content:"";
+    position:absolute;
+    width:80px;
+    height:80px;
+    top:20px;
+    left:20px;
+    border-radius:50%;
+    background:rgba(255,180,0,.35);
+    filter:blur(22px);
+    animation:pulse 2s infinite;
+}
+
+.sun::after{
+    content:"";
+    position:absolute;
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:2px solid rgba(255,170,0,.25);
+    animation:ring 3s infinite;
+}
+
+/* ===========================
+   ANIMATION
+=========================== */
+
+@keyframes rotate{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+        opacity:.7;
+    }
+
+    50%{
+        transform:scale(1.15);
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(1);
+        opacity:.7;
+    }
+
+}
+
+@keyframes ring{
+
+    0%{
+        transform:scale(.9);
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(1.4);
+        opacity:0;
+    }
+
+}
+
+/* ===========================
+   FLOAT EFFECT
+=========================== */
+
+.container{
+    animation:float 5s ease-in-out infinite;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+/* ===========================
+   DARK MODE
+=========================== */
+
+body.dark{
+    background:linear-gradient(135deg,#050505,#151515,#2c2c2c);
+}
+
+body.dark .container{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 0 40px rgba(255,255,255,.15);
+}
+
+body.dark .mode-text{
+    color:#ddd;
+}
+
+body.dark .toggle{
+    background:#555;
+}
+
+body.dark .ball{
+    left:33px;
+    background:#e0e0e0;
+    box-shadow:0 0 20px #fff;
+}
+
+body.dark .sun-core{
+    background:radial-gradient(circle,#f1f1f1,#b0b0b0,#555);
+    box-shadow:0 0 30px rgba(255,255,255,.5);
+}
+
+body.dark .orbit{
+    border-color:rgba(255,255,255,.25);
+}
+
+body.dark .planet{
+    background:#fff;
+    box-shadow:0 0 15px #fff;
+}
+
+/* ===========================
+   INPUT EFFECT
+=========================== */
+
+.input-box input:hover{
+    border-color:#ffb000;
+}
+
+body.dark .input-box input{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+}
+
+body.dark .input-box input:focus{
+    border-color:#fff;
+    box-shadow:0 0 18px rgba(255,255,255,.45);
+}
+
+/* ===========================
+   BUTTON EFFECT
+=========================== */
+
+body.dark button{
+    background:linear-gradient(90deg,#888,#555);
+}
+
+body.dark button:hover{
+    box-shadow:0 0 20px rgba(255,255,255,.4);
+}
+
+/* ===========================
+   TEXT
+=========================== */
+
+body.dark h1,
+body.dark label,
+body.dark .extra,
+body.dark .signup{
+    color:#f5f5f5;
+}
+
+body.dark a{
+    color:#fff;
+}
+
+/* ===========================
+   SUN ANIMATION
+=========================== */
+
+.sun-core{
+    animation:sunGlow 3s ease-in-out infinite;
+}
+
+@keyframes sunGlow{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+/* ===========================
+   PLANET EFFECT
+=========================== */
+
+.planet{
+    animation:planetBlink 2s infinite alternate;
+}
+
+@keyframes planetBlink{
+
+    from{
+        opacity:.5;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+/* ===========================
+   BACKGROUND STARS
+=========================== */
+
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:
+        radial-gradient(circle at 20% 20%,rgba(255,255,255,.15) 2px,transparent 2px),
+        radial-gradient(circle at 80% 40%,rgba(255,255,255,.12) 2px,transparent 2px),
+        radial-gradient(circle at 50% 80%,rgba(255,255,255,.10) 2px,transparent 2px);
+    background-size:220px 220px;
+    animation:starsMove 25s linear infinite;
+    pointer-events:none;
+    z-index:-2;
+}
+
+@keyframes starsMove{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-220px);
+    }
+
+}
+
+/* ===========================
+   CONTAINER HOVER
+=========================== */
+
+.container:hover{
+    transform:translateY(-6px);
+    transition:.4s;
+    box-shadow:0 0 60px rgba(255,170,0,.45);
+}
+
+/* ===========================
+   INPUT ICON EFFECT
+=========================== */
+
+.input-box{
+    position:relative;
+}
+
+.input-box input{
+    padding-left:15px;
+}
+
+/* ===========================
+   BUTTON ACTIVE
+=========================== */
+
+button:active{
+    transform:scale(.98);
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#ff9800;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-track{
+    background:#222;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+    .container{
+        width:90%;
+        padding:28px;
+    }
+
+    .sun{
+        transform:scale(.9);
+    }
+
+}
+
+@media(max-width:480px){
+
+    .container{
+        width:95%;
+        padding:22px;
+        border-radius:20px;
+    }
+
+    h1{
+        font-size:26px;
+    }
+
+    .mode-text{
+        font-size:11px;
+    }
+
+    .toggle{
+        width:55px;
+        height:28px;
+    }
+
+    .ball{
+        width:22px;
+        height:22px;
+    }
+
+    .sun{
+        transform:scale(.8);
+    }
+
+}
+
+/* ===========================
+   SMOOTH TRANSITION
+=========================== */
+
+body,
+.container,
+.toggle,
+.ball,
+.sun-core,
+button,
+input{
+    transition:.4s ease;
+}
+
+/* ===========================
+   FINISH
+=========================== */
+
+html{
+    scroll-behavior:smooth;
+}
