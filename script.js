@@ -115,7 +115,7 @@ form.addEventListener("submit", function(e){
         localStorage.setItem("username", user.username);
 
         alert("Login Successful!");
-       window.location.href = "https://sadmantechai.blogspot.com/?m=1";
+       window.location.href = "https://sadmantechai.blogspot.com/";
         // এখানে পরে তোমার Blogspot URL বসাবে
         // Example:
         // window.location.href = "https://yourblog.blogspot.com/";
